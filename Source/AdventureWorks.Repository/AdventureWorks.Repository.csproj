@@ -23,7 +23,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\AdventureWorks\AdventureWorks.csproj" />
-		<ProjectReference Include="..\Dapper.QueryTemplate\Dapper.QueryTemplate\Dapper.QueryTemplate.csproj" />
+		<ProjectReference Include="..\Dapper.QueryTemplate\Dapper.QueryTemplate.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
