@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="ProductQuery\SearchAsync.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SearchAsync.tt</DependentUpon>
+		</None>
+		<None Include="ProductQuery\SearchAsync.Partial.cs">
+			<DependentUpon>SearchAsync.tt</DependentUpon>
+		</None>
+		<None Update="ProductQuery\SearchAsync.tt">
+			<Generator>TextTemplatingFilePreprocessor</Generator>
+			<LastGenOutput>ProductQuery\SearchAsync.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AdventureWorks\AdventureWorks.csproj" />
+		<ProjectReference Include="..\Dapper.QueryTemplate\Dapper.QueryTemplate\Dapper.QueryTemplate.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="ProductQuery\FindByIdAsync.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>FindByIdAsync.tt</DependentUpon>
+		</None>
+		<None Include="ProductQuery\FindByIdAsync.Partial.cs">
+			<DependentUpon>FindByIdAsync.tt</DependentUpon>
+		</None>
+		<PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
+		<None Update="ProductQuery\FindByIdAsync.tt">
+			<Generator>TextTemplatingFilePreprocessor</Generator>
+			<LastGenOutput>FindByIdAsync.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="ProductQuery\FindByIdAsync.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>FindByIdAsync.tt</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+</Project>
