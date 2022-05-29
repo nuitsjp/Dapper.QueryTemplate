@@ -1,5 +1,6 @@
 ﻿using EnvDTE;
 using Microsoft.VisualStudio.TemplateWizard;
+using VSLangProj;
 
 namespace Dapper.QueryTemplate.ItemTemplate.Wizard
 {
@@ -38,6 +39,16 @@ namespace Dapper.QueryTemplate.ItemTemplate.Wizard
 
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
         {
+            if (projectItem.Name.EndsWith(".tt.cs"))
+            {
+                projectItem.GetProperty("DependentUpon").Value = projectItem.Name.Replace(".tt.cs", ".tt");
+            }
+
+            if (projectItem.Name.EndsWith(".tt"))
+            {
+                projectItem.GetProperty("Generator").Value = "TextTemplatingFilePreprocessor";
+                projectItem.GetProperty("CustomTool").Value = "TextTemplatingFilePreprocessor";
+            }
         }
 
         public bool ShouldAddProjectItem(string filePath) => _shouldAddProjectItem;
@@ -48,6 +59,22 @@ namespace Dapper.QueryTemplate.ItemTemplate.Wizard
 
         public void RunFinished()
         {
+        }
+    }
+
+    public static class PropertyExtensions
+    {
+        public static Property GetProperty(this ProjectItem projectItem, string propertyName)
+        {
+            foreach (Property property in projectItem.Properties)
+            {
+                if (property.Name == propertyName)
+                {
+                    return property;
+                }
+            }
+
+            throw new InvalidOperationException($"{propertyName} is not exists.");
         }
     }
 }

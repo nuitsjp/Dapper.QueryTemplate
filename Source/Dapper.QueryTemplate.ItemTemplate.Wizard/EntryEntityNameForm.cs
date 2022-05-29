@@ -31,5 +31,15 @@ namespace Dapper.QueryTemplate.ItemTemplate.Wizard
             DialogResult = DialogResult.Cancel;
             Close();
         }
+
+        private void EntityNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Return)
+            {
+                EntityName = EntityNameTextBox.Text;
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
     }
 }

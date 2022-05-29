@@ -62,6 +62,7 @@
             this.EntityNameTextBox.Name = "EntityNameTextBox";
             this.EntityNameTextBox.Size = new System.Drawing.Size(297, 22);
             this.EntityNameTextBox.TabIndex = 2;
+            this.EntityNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EntityNameTextBox_KeyDown);
             // 
             // OkButton
             // 
