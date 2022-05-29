@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+	<TemplateData>
+		<Name>QueryAsync</Name>
+		<Description>SQL template to execute QueryAsync of Dapper.</Description>
+		<Icon>Dapper.QueryTemplate.ItemTemplate.ico</Icon>
+		<TemplateID>3daac0b1-81a7-48f1-bce4-f215594a9e2d</TemplateID>
+		<ProjectType>CSharp</ProjectType>
+		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<DefaultName>QueryAsync.tt</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+			</Reference>
+		</References>
+		<ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.tt">QueryAsync.tt</ProjectItem>
+		<CustomParameters>
+			<CustomParameter Name="$itemproperties$" Value="CustomTool" />
+			<CustomParameter Name="$CustomTool$" Value="TextTemplatingFilePreprocessor" />
+		</CustomParameters>
+		<ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.tt.cs">QueryAsync.tt.cs</ProjectItem>
+	</TemplateContent>
+	<WizardExtension>
+		<!-- アセンブリ名とバージョン、言語、確認したトークンを入れる -->
+		<Assembly>Dapper.QueryTemplate.ItemTemplate.Wizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=bd010a2a12df5f83</Assembly>
+		<!-- IWizardを継承したエントリクラスを名前空間込みで入れる -->
+		<FullClassName>Dapper.QueryTemplate.ItemTemplate.Wizard.TemplateWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>

@@ -17,7 +17,7 @@
 		</None>
 		<None Update="ProductQuery\SearchAsync.tt">
 			<Generator>TextTemplatingFilePreprocessor</Generator>
-			<LastGenOutput>ProductQuery\SearchAsync.cs</LastGenOutput>
+			<LastGenOutput>SearchAsync.cs</LastGenOutput>
 		</None>
 	</ItemGroup>
 
@@ -51,6 +51,11 @@
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>FindByIdAsync.tt</DependentUpon>
+	  </Compile>
+	  <Compile Update="ProductQuery\SearchAsync.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>SearchAsync.tt</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 

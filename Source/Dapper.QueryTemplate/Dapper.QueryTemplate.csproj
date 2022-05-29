@@ -1,13 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.0.123" />
-  </ItemGroup>
+	<!-- NuGet -->
+	<PropertyGroup>
+		<PackageId>Dapper.QueryTemplate</PackageId>
+		<Description>UnitGeneratorTemplateTemplate library for developing variable SQL in Dapper with the best experience.</Description>
+		<PackageVersion>$(Version)</PackageVersion>
+		<Authors>nuits.jp</Authors>
+		<Copyright>© 2022 nuits.jp</Copyright>
+		<PackageTags>dapper sql template</PackageTags>
+		<PackageProjectUrl>https://github.com/nuitsjp/Dapper.QueryTemplate</PackageProjectUrl>
+		<RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>0.0.1-pre</Version>
+		<PackageIcon>nuits.jp.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\Images\nuits.jp.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.0.123" />
+	</ItemGroup>
 
 </Project>
